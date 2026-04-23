@@ -30,6 +30,9 @@ jobs:
         run: yarn install
 
       - name: Run tests
+        env:
+          SQLITE_DB_LOCATION: /tmp/todo.db
+          NODE_ENV: test
         run: yarn test
 
       - name: Build Docker image
